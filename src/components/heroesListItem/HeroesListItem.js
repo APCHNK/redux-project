@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { heroesFetching, heroesFetched, heroesFetchingError } from '../../actions';
+import { fetchHeroes } from '../../actions';
 import {useHttp} from '../../hooks/http.hook';
 
 
@@ -23,17 +23,12 @@ const HeroesListItem = ({ name, text, element, id }) => {
 			elementClassName = "bg-warning bg-gradient";
 	}
 	
-	const { request} = useHttp()
+	const { request } = useHttp()
 
 	const dispatch = useDispatch()
 	const onDelete = () => {
 		console.log('delete', id)
-		dispatch(heroesFetching());
-
-		request(`http://localhost:3001/heroes/${id}`, 'DELETE')
-			.then(() => request('http://localhost:3001/heroes'))
-			.then((data) => dispatch(heroesFetched(data)))
-			.catch(() => dispatch(heroesFetchingError()))
+		dispatch(fetchHeroes(request));
 	}
 
 	return (

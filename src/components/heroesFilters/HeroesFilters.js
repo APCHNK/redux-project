@@ -1,22 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filtersFetching, changeFilters, changeActiveFilters } from '../../actions';
+import { fetchFilters, changeActiveFilters } from '../../actions';
 import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from "react";
 import Spinner from '../spinner/Spinner';
-
-
-
-// Задача для этого компонента:
-// Фильтры должны формироваться на основании загруженных данных
-// Фильтры должны отображать только нужных героев при выборе
-// Активный фильтр имеет класс active
-// Изменять json-файл для удобства МОЖНО!
-// Представьте, что вы попросили бэкенд-разработчика об этом
-
-
-
-
-
 
 const activeFilters = []
 
@@ -26,10 +12,7 @@ const HeroesFilters = () => {
     const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(filtersFetching());
-        request("http://localhost:3001/filters")
-            .then(data => dispatch(changeFilters(data)))
-
+        dispatch(fetchFilters(request));
         // eslint-disable-next-line
     }, [])
 
@@ -47,7 +30,7 @@ const HeroesFilters = () => {
             if (filter === 'all') {
                 return <button onClick={onClick} key={i} className="btn btn-danger active">{filter}</button>
             }
-            console.log(classesForButtons.filter)
+            // console.log(classesForButtons.filter)
             return <button onClick={onClick} key={i} className={'btn ' + classesForButtons[filter]}>{filter}</button>
         })
     }
@@ -68,7 +51,7 @@ const HeroesFilters = () => {
             }
         }
         
-        console.log(activeFilters)
+        // console.log(activeFilters)
         dispatch(changeActiveFilters(activeFilters))
     }
 
@@ -79,6 +62,7 @@ const HeroesFilters = () => {
     } else {
         filter = renderFilterList(filters)
     }
+
     return (
         <div className="card shadow-lg mt-4">
             <div className="card-body">
