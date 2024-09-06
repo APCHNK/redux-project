@@ -26,7 +26,7 @@ const HeroesAddForm = () => {
                     ...values
                 }
                 request(`http://localhost:3001/heroes`, 'POST', JSON.stringify(body))
-                    .then(() => dispatch(fetchHeroes()))
+                    .then(() => dispatch(fetchHeroes(request)))
             }}
         >
             <Form className="border p-4 shadow-lg rounded">

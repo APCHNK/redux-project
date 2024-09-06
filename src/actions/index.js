@@ -1,3 +1,9 @@
+import { heroesFetching, heroesFetched, heroesFetchingError } from "../components/heroesList/heroesSlice";
+import {
+    filtersFetching,
+    changeFilters
+} from '../components/heroesFilters/filtersSlice'
+
 export const fetchHeroes = (request) => (dispatch) => {
 	dispatch(heroesFetching());
 	request("http://localhost:3001/heroes")
@@ -10,42 +16,3 @@ export const fetchFilters = (request) => (dispatch) => {
 	request("http://localhost:3001/filters")
             .then(data => dispatch(changeFilters(data)))
 };
-
-export const heroesFetching = () => {
-    return {
-        type: 'HEROES_FETCHING'
-    }
-}
-
-export const heroesFetched = (heroes) => {
-    return {
-        type: 'HEROES_FETCHED',
-        payload: heroes
-    }
-}
-
-export const heroesFetchingError = () => {
-    return {
-        type: 'HEROES_FETCHING_ERROR'
-    }
-}
-
-export const filtersFetching = () => {
-    return {
-        type: 'FILTERS_FETCHING'
-    }
-}
-
-export const changeFilters = (filters) => {
-    return {
-        type: 'CHANGE_FILTERS',
-        payload: filters
-    }
-}
-
-export const changeActiveFilters = (filters) => {
-    return {
-        type: 'CHANGE_ACTIVE_FILTERS',
-        payload: filters
-    }
-}

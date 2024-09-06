@@ -28,7 +28,8 @@ const HeroesListItem = ({ name, text, element, id }) => {
 	const dispatch = useDispatch()
 	const onDelete = () => {
 		console.log('delete', id)
-		dispatch(fetchHeroes(request));
+		request(`http://localhost:3001/heroes/${id}`, 'DELETE')
+		.then(dispatch(fetchHeroes(request)))
 	}
 
 	return (
