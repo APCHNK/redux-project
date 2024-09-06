@@ -1,0 +1,56 @@
+{
+  "heroes": [
+    {
+      "id": "c5cd055e-7eef-4db3-926a-c54be82b1d4d",
+      "name": "1111",
+      "text": "1111111111111111111111111111111",
+      "element": "water"
+    },
+    {
+      "id": "0f4d8069-24ce-40c3-915b-3fcf0d8563e8",
+      "name": "1111",
+      "text": "1111111111111111111111111111111",
+      "element": "earth"
+    },
+    {
+      "id": "bfde711f-2bae-4bff-95b9-28a15e48a1bc",
+      "name": "ffffff",
+      "text": "ffffffffffffffffffffff",
+      "element": "fire"
+    },
+    {
+      "id": "ba76917a-8c49-4d63-b96f-a34f874be922",
+      "name": "wwwwwwwwwwwwwww",
+      "text": "wwwwwwwwwwwwww",
+      "element": "water"
+    },
+    {
+      "id": "96a230be-2c6c-425e-89be-cf8bc036c24d",
+      "name": "ffffffffff",
+      "text": "fffffffffffffffffffffffffffffffff2",
+      "element": "fire"
+    },
+    {
+      "id": "79580977-85a3-42bf-90fb-f93b25ecc43b",
+      "name": "ffffffffff",
+      "text": "333333333333333333",
+      "element": "wind"
+    },
+    {
+      "id": "b5bd2f7a-93d7-47d9-8eba-890fca75b916",
+      "name": "3333333333",
+      "text": "333333333333333333",
+      "element": "wind"
+    }
+  ],
+  "filters": [
+    "all",
+    "fire",
+    "water",
+    "wind",
+    "earth"
+  ],
+  "activeFilters": [
+    
+  ]
+}
