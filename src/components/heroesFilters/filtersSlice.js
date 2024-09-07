@@ -1,24 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {useHttp} from '../../hooks/http.hook';
 
 const initialState = {
     filters: [],
-    filtersLoadingStatus: 'loaded',
+    filtersLoadingStatus: '',
     activeFilters: ['all']
 }
+
+export const fetchFilters = createAsyncThunk(
+    'filter/fetchFilters',
+    () => {
+        const {request} = useHttp();
+        return request("http://localhost:3001/filters")
+    }
+);
 
 const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
-        filtersFetching: state => {state.filtersLoadingStatus = 'loading'},
-        changeFilters: (state, action) => {
-        // eslint-disable-next-line
-            state.filtersLoadingStatus = 'loaded',
-            state.filters = [...action.payload]
-        },
         changeActiveFilters: (state, action) => {
             state.activeFilters = [...action.payload]
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchFilters.pending,  state => {state.filtersLoadingStatus = 'loading'})
+            .addCase(fetchFilters.fulfilled, (state, action) => {
+                // eslint-disable-next-line
+                    state.filtersLoadingStatus = 'loaded',
+                    state.filters = action.payload
+                })
+            .addDefaultCase(() => {})
     }
 
 })

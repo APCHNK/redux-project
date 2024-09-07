@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFilters } from '../../actions';
+import { fetchFilters } from './filtersSlice';
 import { changeActiveFilters } from './filtersSlice';
-import { useHttp } from '../../hooks/http.hook';
 import { useEffect } from "react";
 import Spinner from '../spinner/Spinner';
 
@@ -10,10 +9,9 @@ const activeFilters = []
 const HeroesFilters = () => {
     const { filters, filterLoadingStatus } = useSelector(state => state.filters);
     const dispatch = useDispatch()
-    const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(fetchFilters(request));
+        dispatch(fetchFilters());
         // eslint-disable-next-line
     }, [])
 
@@ -31,7 +29,6 @@ const HeroesFilters = () => {
             if (filter === 'all') {
                 return <button onClick={onClick} key={i} className="btn btn-danger active">{filter}</button>
             }
-            // console.log(classesForButtons.filter)
             return <button onClick={onClick} key={i} className={'btn ' + classesForButtons[filter]}>{filter}</button>
         })
     }

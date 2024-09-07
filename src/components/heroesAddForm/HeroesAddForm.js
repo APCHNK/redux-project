@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useHttp } from '../../hooks/http.hook';
-import { fetchHeroes } from '../../actions';
+import { fetchHeroes } from '../heroesList/heroesSlice';
 import { useDispatch } from 'react-redux';
 
 const HeroesAddForm = () => {

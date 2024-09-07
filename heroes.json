@@ -1,5 +1,48 @@
 {
-  "heroes": [],
+  "heroes": [
+    {
+      "id": "e6d33640-1cbb-44de-8446-3d284c36b13a",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "4a73708b-6fc5-44d1-9870-da3d4ebf9ed8",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "cd89dcd3-f57d-4e70-ad99-ae08a0e76653",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "268048fa-51e3-4f9c-b4a1-891783abdece",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "e634b928-27dd-426a-b146-a0f9b2ae0a3e",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "a29311a1-99a3-4806-831f-e2a93a7166c5",
+      "name": "dsasdsda",
+      "text": "sdsdadsasaddsadsa",
+      "element": "fire"
+    },
+    {
+      "id": "0c5e1052-3e50-4891-875e-91de5147dbd4",
+      "name": "sdfdfsdsfdsf",
+      "text": "dsfdfdfsfdsdsfdfs",
+      "element": "water"
+    }
+  ],
   "filters": [
     "all",
     "fire",
